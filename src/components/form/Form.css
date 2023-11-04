@@ -1,0 +1,113 @@
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.wrap {
+  margin-top: 3rem;
+  background-color: #000;
+}
+/* .form {
+  width: 390px;
+  margin: auto;
+} */
+.background {
+  background-color: #0b0819;
+  /* margin: 0 auto; */
+  padding: 1.5em;
+  width: auto;
+  height: auto;
+  border: 0.2em solid #46425e;
+  border-radius: 0.8em;
+  /* -webkit-box-shadow: 0 1em 0.5em #555;
+  -moz-box-shadow: 0 1em 0.5em #555; */
+  /* box-shadow: 0 1em 0.5em #555; */
+}
+#title {
+  width: 100%;
+  margin: 0;
+  padding: 0.5em 0;
+  background-color: #0198e1;
+}
+#title h1 {
+  text-align: center;
+  color: #000;
+  font-family: "Open Sans", sans-serif;
+  font-size: 2em;
+  font-weight: 400;
+  line-height: 1em;
+  margin-top: 0.3em;
+}
+
+.section {
+  color: #0198e1;
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 1em;
+  background-color: rgba(175, 175, 175, 0.3);
+  width: 100%;
+  padding: 0.8em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 0.1em solid rgb(0, 0, 0);
+  text-indent: 1.5em;
+}
+.section:focus {
+  border: 0.1em solid #46425e;
+}
+#comment {
+  height: 5em;
+  max-width: 100%;
+}
+#agree {
+  font-family: "Open Sans", sans-serif;
+  color: #0198e1;
+  font-size: 1em;
+  font-weight: 400;
+}
+.button-submit {
+  min-width: 16em;
+}
+.current-text {
+  color: #627eea;
+  font-size: 36px;
+}
+
+@media (max-width: 425px) {
+  .button-submit {
+    min-width: 10rem; /* Reset the min-width property below 425px */
+  }
+  .current-text {
+    color: #627eea;
+    font-size: 17px;
+  }
+}
+.submit {
+  width: 100%;
+}
+button {
+  /* width: 389px; */
+  /* width: 100%; */
+
+  padding: 1em;
+  font-family: "Open Sans", sans-serif;
+  cursor: pointer;
+
+  color: #fff;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  font-weight: 400;
+
+  /* min-width: 10em; */
+
+  border-radius: 30px;
+  border: 1px solid #fff;
+  background: linear-gradient(94deg, #3387d5 -5.94%, #7a06c9 115.34%);
+}
