@@ -22,31 +22,35 @@ const TokenModal = ({ setShowImage, setCurentValue, setEstimateValue }) => {
     coin.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
   useEffect(() => {
-    setShowImage(coinJson[0]?.image);
-    setCurentValue(coinJson[0]?.current_price);
-    setSelectedOption(coinJson[0]);
+    // setShowImage(coinJson[0]?.image);
 
-    // const apiUrl =
-    //   "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc";
-    // //   "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false";
-    // // "https://api.binance.com/api/v3/ticker/24hr";
-    // axios
-    //   .get(apiUrl)
-    //   .then((response) => {
-    //     // Filter and sort the pairs with USDT as the quote asset (counter currency).
-    //     const usdtPairs = response.data
-    //       //   .filter(
-    //       //     (pair) => pair.symbol.endsWith("USDT") || pair.symbol === "BTCUSDT"
-    //       //   )
-    //       //   .sort((a, b) => parseFloat(b.quoteVolume) - parseFloat(a.quoteVolume))
-    //       .slice(0, 10);
+    // setSelectedOption(coinJson[0]);
 
-    //     setCoins(usdtPairs);
-    //   })
-    //   .catch((error) => {
-    //     console.error("Error fetching data:", error);
-    //   });
-    // console.log(coins);
+    const apiUrl =
+      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc";
+    //   "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false";
+    // "https://api.binance.com/api/v3/ticker/24hr";
+    axios
+      .get(apiUrl)
+      .then((response) => {
+        // Filter and sort the pairs with USDT as the quote asset (counter currency).
+        const usdtPairs = response.data
+          //   .filter(
+          //     (pair) => pair.symbol.endsWith("USDT") || pair.symbol === "BTCUSDT"
+          //   )
+          //   .sort((a, b) => parseFloat(b.quoteVolume) - parseFloat(a.quoteVolume))
+          .slice(0, 10);
+
+        setCoins(usdtPairs);
+        setShowImage(usdtPairs[0]?.image);
+
+        setSelectedOption(usdtPairs[0]);
+        setCurentValue(usdtPairs[0]?.current_price);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+    console.log(coins);
   }, []);
   const handleOptionClick = (coinData) => {
     setSelectedOption(coinData);
